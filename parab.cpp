@@ -1,8 +1,6 @@
 #include<iostream>
 #include<cmath>
-double a = 1;
-double b = 1;
-double c =1/10;
+
 
 double sol1(double a, double b,double c);
 double sol2(double a, double b,double c);
@@ -15,12 +13,24 @@ double sol22(double a, double b,double c);
     
     int main(void)
 {
-  double sol1,sol2,sol11,sol22;
+  double a = 1;
+  double b = 1;
+  double c =1/10;
+  double sol1, sol2, sol11, sol22;
+
+  sol1 = sol1(a,b,c);
+  sol2 = sol2(a,b,c);
+  sol11 = sol11(a,b,c);
+    sol22 = sol22(a,b,c);
+  
   
   std::cout << sol1 << "\t" << sol2 << "\t" << sol11 << "\t" << sol22 << std::endl;
    
   return 0;
 }
+
+
+
 
 
 double sol1(double a, double b, double c){
@@ -29,6 +39,7 @@ double sol1(double a, double b, double c){
 }
 
 double sol2(double a, double b, double c){
+
   double s2 = (- b - sqrt(pow(b,2) - 4*a*c))/(2*a);
   return s2;
 }
