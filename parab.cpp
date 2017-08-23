@@ -11,18 +11,28 @@ double sol22(double a, double b,double c);
     
     int main(void)
 {
-  double a = 1.0;
-  double b = 1.0;
-  double c = 0.1;
- 
 
-  std::cout.precision(16); std::cout.setf(std::ios::scientific);
-  
-  
-  std::cout << sol1(a,b,c) << "\t" << sol2(a,b,c) << "\t" << sol11(a,b,c) << "\t" << sol22(a,b,c) << std::endl;
-   
+
+  for(int k=1; k <= 30; k++){
+    double a = 1;
+    double b = 1;
+    double c = pow(0.1,k); 
+    double x1 = sol1(a,b,c);
+    double x2 = sol2(a,b,c);
+    double x11 = sol11(a,b,c);
+    double x22 =sol22(a,b,c);
+    std::cout.precision(16); std::cout.setf(std::ios::scientific);
+     
+    std::cout << k
+	      <<"\t"<< x1
+	    << "\t" << x2
+	    << "\t" << x11
+	    << "\t" << x22
+	    << std::endl;
+  }
   return 0;
 }
+
 
 double sol1(double a, double b, double c){
   double s1 = (- b + sqrt(pow(b,2) - 4*a*c))/(2*a);
@@ -43,9 +53,4 @@ double sol11(double a, double b, double c){
     double sol22(double a, double b, double c){
       double s22 = (- 2*c)/(b -  sqrt(pow(b,2) - 4*a*c));
 			return s22;
-			}
-
-
-
-
-    
+}
