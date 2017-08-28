@@ -1,0 +1,2 @@
+foobar.x : foo.o bar.o
+	 g++ -o foobar.x foo.o bar.o foobar.cpp	
